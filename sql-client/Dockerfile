@@ -36,6 +36,11 @@ RUN wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache
     wget -P /opt/sql-client/lib/ https://repo.maven.apache.org/maven2/org/apache/flink/flink-sql-avro-confluent-registry/1.16.0/flink-sql-avro-confluent-registry-1.16.0.jar; \
     wget -P /opt/sql-client/lib/ https://github.com/knaufk/flink-faker/releases/download/v0.5.1/flink-faker-0.5.1.jar;
 
+RUN wget https://github.com/nexmark/nexmark/releases/latest/download/nexmark-flink.tgz &&  \
+    tar -zxvf nexmark-flink.tgz && \
+    mv nexmark-flink/lib/nexmark-flink-0.2-SNAPSHOT.jar /opt/sql-client/lib && \
+    rm -rf nexmark-flink.tgz nexmark-flink \
+
 # Copy configuration
 COPY sql-client/conf/* /opt/flink/conf/
 
