@@ -41,6 +41,9 @@ RUN wget https://github.com/nexmark/nexmark/releases/latest/download/nexmark-fli
     mv nexmark-flink/lib/nexmark-flink-0.2-SNAPSHOT.jar /opt/sql-client/lib && \
     rm -rf nexmark-flink.tgz nexmark-flink \
 
+# Download csv file for nexmark q13
+RUN wget https://ci-deps-dist.s3.amazonaws.com/side-input.csv
+
 # Copy configuration
 COPY sql-client/conf/* /opt/flink/conf/
 
