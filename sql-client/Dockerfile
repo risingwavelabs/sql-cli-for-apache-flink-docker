@@ -21,7 +21,7 @@
 #SQL CLI - inspired by https://github.com/wuchong/flink-sql-demo/tree/v1.11-EN/sql-client
 ###############################################################################
 
-FROM apache/flink:1.19.0
+FROM apache/flink:1.20.0
 
 # Create CLI lib folder
 COPY ./sql-client/bin/* /opt/sql-client/
